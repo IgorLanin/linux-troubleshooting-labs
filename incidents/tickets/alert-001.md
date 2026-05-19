@@ -2,7 +2,7 @@
 
 Severity: CRITICAL
 Host: server
-Mount: /test
+Mount: /test_mount
 
 Condition:
 disk_used_percent > 90%

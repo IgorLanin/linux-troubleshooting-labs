@@ -39,10 +39,13 @@ function check_service_status() {
     else
         print_color "red" "Service ${1} is not active"
         exit 1
+    fi
 }
 
 
-#############################################################
+############################################################
+# Main setup
+############################################################
 
 print_color "green" "----------Start configuring...----------"
 sudo apt update -y
@@ -74,5 +77,4 @@ pid_cpu_load_2=$!
 
 
 print_color "green" "----------Stop nginx service...----------"
-pid_nginx=$(prep nginx | head -n 1)
-sudo kill -9 $pid_nginx
+systemctl kill nginx

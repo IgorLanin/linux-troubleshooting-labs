@@ -7,15 +7,15 @@
 
 Воспроизвести нижеуказанные инциденты можно следующей командой:
 
-- `ssh server 'bash -s' < scripts/incident_1.sh`
+- `cd linux-troubleshooting-labs && ssh server 'bash -s' < scripts/incident_1.sh`
 
 
 В рамках данной группы инцидентов могут быть сгенерированы следующие тикеты на основании сработавших алертов в системе мониторинга:
 
-1. [Alert-001 - Disk full](/tickets/alert-001.md)
-2. [Alert-002 - Service down](/tickets/alert-002.md)
-3. [Alert-003 - CPU overload](/tickets/alert-003.md)
-4. [Alert-004 - False alarm](/tickets/alert-004.md)
+1. [Alert-001 - Disk full](/incidents/tickets/alert-001.md)
+2. [Alert-002 - Service down](/incidents/tickets/alert-002.md)
+3. [Alert-003 - CPU overload](/incidents/tickets/alert-003.md)
+4. [Alert-004 - False alarm](/incidents/tickets/alert-004.md)
 
 
 Разберу каждый алерт отдельно и составлю отчеты.
@@ -23,7 +23,7 @@
 
 
 
-# 1. [Alert-001 - Disk full](/tickets/alert-001.md)
+# 1. [Alert-001 - Disk full](/incidents/tickets/alert-001.md)
 
 Краткое описание инцидентa: закончилось место на диске.
 
@@ -64,7 +64,7 @@
 
 
 
-# 2. [Alert-002 - Service down](/tickets/alert-002.md)
+# 2. [Alert-002 - Service down](/incidents/tickets/alert-002.md)
 
 Краткое описание инцидентa: nginx в статусе inactive более 2 минут.
 
@@ -105,7 +105,7 @@
 
 
 
-# 3. [Alert-003 - CPU overload](/tickets/alert-003.md)
+# 3. [Alert-003 - CPU overload](/incidents/tickets/alert-003.md)
 
 Краткое описание инцидентa: Высокая нагрузка CPU более 5 минут.
 
@@ -147,7 +147,7 @@
 
 
 
-# 4. [Alert-004 - False alarm](/tickets/alert-004.md)
+# 4. [Alert-004 - False alarm](/incidents/tickets/alert-004.md)
 
 
 Краткое описание инцидентa: Кратковременный скачок нагрузки на CPU в течение 1 минуты. Статус RECOVERED, система вернулась к нормальному диапазону автоматически.
