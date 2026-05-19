@@ -7,7 +7,7 @@ set -e
 # Usage: green, red, default color
 ############################################################
 function print_color() {
-    no_color="\e[0;30m"
+    no_color="\e[0;37m"
 
     case $1 in
         green)
@@ -60,11 +60,13 @@ check_service_status nginx
 
 print_color "green" "----------Disk overload imitating...----------"
 sudo mkfs.ext4 /dev/sdb
-sudo mkdir /test_mount
+sudo mkdir -p /test_mount
 echo "/dev/sdb /test_mount ext4 defaults 0 2" | sudo tee -a /etc/fstab
+sudo mount -a
 
-sudo mkdir /test_mount/load
-dd if=/dev/zero of=/test_mount/load/bigfile bs=1M count=1946
+sudo mkdir -p /test_mount/load
+sudo touch /test_mount/load/bigfile
+sudo dd if=/dev/zero of=/test_mount/load/bigfile bs=1M count=1750
 
 
 print_color "green" "----------CPU overload imitating...----------"
@@ -75,4 +77,4 @@ pid_cpu_load_2=$!
 
 
 print_color "green" "----------Stop nginx service...----------"
-systemctl kill nginx
+sudo systemctl kill nginx
