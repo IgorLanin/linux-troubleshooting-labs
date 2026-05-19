@@ -63,9 +63,10 @@ sudo apt install -y curl htop python3-flask dnsutils
 
 
 print_color "green" "----------Disk overload imitating...----------"
-mkfs.ext4 /dev/sdb
+sudo mkfs.ext4 /dev/sdb
 sudo mkdir /test_mount
-echo "/dev/sdb1 /test_mount ext4 defaults 0 2"
+echo "/dev/sdb /test_mount ext4 defaults 0 2" | sudo tee -a /etc/fstab
+mkdir -p /test_mount/load
 dd if=/dev/zero of=/test_mount/load/bigfile bs=1M count=1946
 
 
