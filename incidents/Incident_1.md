@@ -5,9 +5,9 @@
 Инструменты: top/htop, df, journalctl, systemctl
 
 
-Воспроизвести нижеуказанные инциденты можно следующей командой, выполнив ее на сервере:
-
-- `~/linux-troubleshooting-labs/scripts/incident_1.sh`
+Воспроизвести нижеуказанные инциденты выполнив следующие команды на сервере:
+1. `chmod +x ~/linux-troubleshooting-labs/scripts/incident_1.sh`
+2. `~/linux-troubleshooting-labs/scripts/incident_1.sh`
 
 
 В рамках данной группы инцидентов могут быть сгенерированы следующие тикеты на основании сработавших алертов в системе мониторинга:

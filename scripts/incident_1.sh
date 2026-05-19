@@ -58,15 +58,12 @@ sudo systemctl start nginx
 check_service_status nginx
 
 
-print_color "green" "----------Install other packages...----------"
-sudo apt install -y curl htop python3-flask dnsutils
-
-
 print_color "green" "----------Disk overload imitating...----------"
 sudo mkfs.ext4 /dev/sdb
 sudo mkdir /test_mount
 echo "/dev/sdb /test_mount ext4 defaults 0 2" | sudo tee -a /etc/fstab
-mkdir -p /test_mount/load
+
+sudo mkdir /test_mount/load
 dd if=/dev/zero of=/test_mount/load/bigfile bs=1M count=1946
 
 
