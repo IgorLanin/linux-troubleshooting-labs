@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -31,7 +31,7 @@ function print_color() {
 # Usage: nginx
 ############################################################
 function check_service_status() {
-    is_service_active=$(sudo systemctl is-active $1)
+    is_service_active=$(sudo systemctl is-active "$1")
 
     if [[ $is_service_active == "active" ]]
     then
@@ -71,9 +71,7 @@ sudo dd if=/dev/zero of=/test_mount/load/bigfile bs=1M count=1750
 
 print_color "green" "----------CPU overload imitating...----------"
 yes > /dev/null &
-pid_cpu_load_1=$!
 yes > /dev/null &
-pid_cpu_load_2=$!
 
 
 print_color "green" "----------Stop nginx service...----------"

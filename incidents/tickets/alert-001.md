@@ -8,7 +8,7 @@ Condition:
 disk_used_percent > 90%
 
 Current value:
-disk_used_percent = 97.8%
+disk_used_percent = 96.0%
 
 Free space:
 1.2 GB remaining
