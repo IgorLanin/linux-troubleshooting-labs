@@ -48,11 +48,12 @@ function check_service_status() {
 print_color "green" "----------Fix incidents...----------"
 
 # Kill CPU overload processes
-load_cpu_pids=$(prep yes)
-if  [[ -n $load_cpu_pids ]]
+load_cpu_pids=$(pgrep yes)
+if  [[ -n "$load_cpu_pids" ]]
 then
     for pid in "${load_cpu_pids[@]}"; do
-        sudo kill -9 "$pid"
+        sudo kill -9 $pid
+        print_color "green" "CPU overloaded processes $load_cpu_pids are terminated"
     done
 else
     print_color "green" "PID of processes haven't found. Check CPU load manually using the 'top' utility"
@@ -65,6 +66,7 @@ big_file_path="/test_mount/load/bigfile"
 if [[ -s "$big_file_path" ]]
 then
     sudo rm -r /test_mount/load/bigfile
+    print_color "green" "File /test_mount/load/bigfile are removed"
 else
     print_color "green" "The file has already been removed"
 fi
