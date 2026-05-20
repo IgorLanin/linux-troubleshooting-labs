@@ -6,12 +6,12 @@
 
 
 Воспроизвести нижеуказанные инциденты выполнив следующие команды на сервере:
-1. `chmod +x ~/linux-troubleshooting-labs/scripts/incident_1.sh`
-2. `~/linux-troubleshooting-labs/scripts/incident_1.sh`
+1. `chmod +x ~/linux-troubleshooting-labs/scripts/lab_1/incident_1.sh`
+2. `~/linux-troubleshooting-labs/scripts/lab_1/incident_1.sh`
 
 После завершения работы с инцидентами, можно устранить инциденты с помощью скрипта, если инциденты не были устранены вручную:
-1. `chmod +x ~/linux-troubleshooting-labs/scripts/fix_incident_1.sh`
-2. `~/linux-troubleshooting-labs/scripts/fix_incident_1.sh`
+1. `chmod +x ~/linux-troubleshooting-labs/scripts/lab_1/fix_incident_1.sh`
+2. `~/linux-troubleshooting-labs/scripts/lab_1/fix_incident_1.sh`
 
 
 В рамках данной группы инцидентов могут быть сгенерированы следующие тикеты на основании сработавших алертов в системе мониторинга:

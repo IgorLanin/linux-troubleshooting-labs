@@ -66,7 +66,7 @@ big_file_path="/test_mount/load/bigfile"
 if [[ -s "$big_file_path" ]]
 then
     sudo rm -r /test_mount/load/bigfile
-    print_color "green" "File /test_mount/load/bigfile are removed"
+    print_color "green" "File /test_mount/load/bigfile is removed"
 else
     print_color "green" "The file has already been removed"
 fi
