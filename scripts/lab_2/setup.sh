@@ -63,8 +63,9 @@ python3 --version
 
 
 print_color "green" "----------Run backend...----------"
+mkdir ~/lab2
 nohup python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py >> ~/lab2/backend.log 2>&1 &
-echo "$!" > /lab2/backend.pid
+echo "$!" > ~/lab2/backend.pid
 
 
 print_color "green" "----------Create nginx reverse proxy...----------"
