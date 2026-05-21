@@ -57,22 +57,25 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 check_service_status nginx
 
-print_color "green" "----------Installing python3-flack...----------"
+print_color "green" "----------Installing python3-flask...----------"
 sudo apt install python3-flask -y
 python3 --version
 
 
 print_color "green" "----------Run backend...----------"
-python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py &
+nohup python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py &
+echo "$!" > backend.pid
 
 
 print_color "green" "----------Create nginx reverse proxy...----------"
-sudo cp ~/linux-troubleshooting-labs/scripts/lab_2/flackapp.conf /etc/nginx/sites-available/flackapp.conf
+sudo cp ~/linux-troubleshooting-labs/scripts/lab_2/flaskapp.conf /etc/nginx/sites-available/flaskapp.conf
 
-sudo ln -s /etc/nginx/sites-available/flackapp.conf /etc/nginx/sites-enabled/flackapp.conf
-sudo nginx -t
-sudo systemctl restart nginx
+sudo ln -sf /etc/nginx/sites-available/flaskapp.conf /etc/nginx/sites-enabled/flaskapp.conf
+sudo nginx -t && sudo systemctl restart nginx
 
 
 print_color "green" "----------Check backend availability...----------"
+curl -i http://127.0.0.1:5000
+
+print_color "green" "----------Check nginx reverse proxy...----------"
 curl localhost
