@@ -71,11 +71,20 @@ print_color "green" "----------Create nginx reverse proxy...----------"
 sudo cp ~/linux-troubleshooting-labs/scripts/lab_2/flaskapp.conf /etc/nginx/sites-available/flaskapp.conf
 
 sudo ln -sf /etc/nginx/sites-available/flaskapp.conf /etc/nginx/sites-enabled/flaskapp.conf
+sudo rm /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl restart nginx
 
 
 print_color "green" "----------Check backend availability...----------"
-curl -i http://127.0.0.1:5000
+for i in {1..20}; do
+    if curl -s http://127.0.0.1:5000 > /dev/null; then
+        print_color "green" "Backend is up"
+        break
+    fi
+    sleep 1
+done
+
+
 
 print_color "green" "----------Check nginx reverse proxy...----------"
 curl localhost
