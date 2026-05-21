@@ -63,15 +63,15 @@ python3 --version
 
 
 print_color "green" "----------Run backend...----------"
-nohup python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py &
-echo "$!" > backend.pid
+nohup python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py >> ~/lab2/backend.log 2>&1 &
+echo "$!" > /lab2/backend.pid
 
 
 print_color "green" "----------Create nginx reverse proxy...----------"
 sudo cp ~/linux-troubleshooting-labs/scripts/lab_2/flaskapp.conf /etc/nginx/sites-available/flaskapp.conf
 
 sudo ln -sf /etc/nginx/sites-available/flaskapp.conf /etc/nginx/sites-enabled/flaskapp.conf
-sudo rm /etc/nginx/sites-enabled/default
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl restart nginx
 
 
@@ -83,7 +83,6 @@ for i in {1..20}; do
     fi
     sleep 1
 done
-
 
 
 print_color "green" "----------Check nginx reverse proxy...----------"

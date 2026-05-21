@@ -25,24 +25,6 @@ function print_color() {
 }
 
 
-
-############################################################
-# Check if service is enabled active
-# Usage: nginx
-############################################################
-function check_service_status() {
-    is_service_active=$(sudo systemctl is-active "$1")
-
-    if [[ $is_service_active == "active" ]]
-    then
-        print_color "green" "Service ${1} is active"
-    else
-        print_color "red" "Service ${1} is not active"
-        exit 1
-    fi
-}
-
-
 ############################################################
 # Main setup
 ############################################################
