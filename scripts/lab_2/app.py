@@ -4,6 +4,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Backend is working"
+    return "Backend is working \n"
 
 app.run(host="127.0.0.1", port=5000)

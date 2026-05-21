@@ -59,11 +59,11 @@ check_service_status nginx
 
 print_color "green" "----------Installing python3-flack...----------"
 sudo apt install python3-flask -y
-python --version
+python3 --version
 
 
 print_color "green" "----------Run backend...----------"
-python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py
+python3 ~/linux-troubleshooting-labs/scripts/lab_2/app.py &
 
 
 print_color "green" "----------Create nginx reverse proxy...----------"
