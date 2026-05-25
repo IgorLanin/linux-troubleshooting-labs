@@ -63,8 +63,8 @@ python3 --version
 
 
 print_color "green" "----------Run backend...----------"
-mkdir ~/lab3
-nohup SLOW_MODE=0 python3 ~/linux-troubleshooting-labs/scripts/lab_3/app_lab_3.py >> ~/lab3/backend.log 2>&1 &
+mkdir -p ~/lab3
+SLOW_MODE=0 nohup python3 ~/linux-troubleshooting-labs/scripts/lab_3/app_lab_3.py >> ~/lab3/backend.log 2>&1 &
 echo "$!" > ~/lab3/backend.pid
 
 

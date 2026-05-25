@@ -58,3 +58,7 @@ check_service_status nginx
 
 print_color "green" "----------Stop backend...----------"
 pkill -f app_lab_3.py
+
+
+print_color "green" "----------Remove logs...----------"
+sudo rm -rf ~~/lab3 ~/lab2
