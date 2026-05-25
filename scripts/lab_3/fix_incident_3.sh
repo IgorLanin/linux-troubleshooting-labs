@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 ############################################################
 # Print colored messages
 # Usage: green, red, default color

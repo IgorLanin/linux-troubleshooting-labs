@@ -33,4 +33,3 @@ print_color "green" "----------Break backend...----------"
 pkill -f app_lab_3.py
 
 SLOW_MODE=1 nohup python3 ~/linux-troubleshooting-labs/scripts/lab_3/app_lab_3.py >> ~/lab3/backend.log 2>&1 &
-curl localhost
