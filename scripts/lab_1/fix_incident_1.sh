@@ -71,6 +71,9 @@ else
     print_color "green" "The file has already been removed"
 fi
 
+# Unmount /test_mount + remove a fs
+sudo umount /test_mount
+sudo wipefs -a /dev/sdb
 
 # Restart nginx
 sudo systemctl restart nginx

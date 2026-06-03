@@ -61,8 +61,7 @@ check_service_status nginx
 print_color "green" "----------Disk overload imitating...----------"
 sudo mkfs.ext4 /dev/sdb
 sudo mkdir -p /test_mount
-echo "/dev/sdb /test_mount ext4 defaults 0 2" | sudo tee -a /etc/fstab
-sudo mount -a
+sudo mount /dev/sdb /test_mount
 
 sudo mkdir -p /test_mount/load
 sudo touch /test_mount/load/bigfile
